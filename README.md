@@ -122,8 +122,8 @@ Additional information can be found in the [wiki][]:
 - [The Client/Trojan API][api]
 - [sqlite3 "dot command" conflicts][sqlite-dotcommands]
 
-[api]: #todo
-[configuration]: #todo
-[payload-mode]: #todo
-[sqlite-dotcommands]: #todo
-[wiki]: #todo
+[api]: https://github.com/chrisallenlane/novahot/wiki/The-Client-Trojan-API
+[configuration]: https://github.com/chrisallenlane/novahot/wiki/Configuring
+[payload-mode]: https://github.com/chrisallenlane/novahot/wiki/The-Client-Trojan-API#payload-mode 
+[sqlite-dotcommands]: https://github.com/chrisallenlane/novahot/wiki/SQLite3-Mode-%22dot-command%22-Conflicts
+[wiki]: https://github.com/chrisallenlane/novahot/wiki
