@@ -1,0 +1,33 @@
+novahot
+
+A webshell framework for penetration testers. It implements an API that can
+communicate with trojans written in any language.
+
+Usage:
+  novahot [options] config
+  novahot [options] trojan list
+  novahot [options] trojan view <filename>
+  novahot [options] shell <target>
+
+Options:
+  -h --help                Show this screen.
+  --version                Show version.
+  -d --download-dir=<dir>  Directory into which remote files should be downloaded.
+  -t --trojan-dir=<dir>    Directory in which custom trojans are stored.
+
+Examples:
+  
+  To view an example config:
+    novahot config
+
+  To seed a config file:
+    novahot config > ~/.novahotrc
+
+  To view a list of available trojans:
+    novahot trojan list
+
+  To view a specifc trojan:
+    novahot trojan view reference-php5.php
+
+  To open a shell to example.com:
+    novahot shell example.com

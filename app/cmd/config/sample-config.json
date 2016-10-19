@@ -1,0 +1,59 @@
+{
+  "global" : {
+
+    "aliases" : {
+      "l"  : "ls",
+      "la" : "ls -a",
+      "ll" : "ls -l"
+    },
+
+    "colors" : {
+      "info"   : "gray",
+      "notice" : "yellow",
+      "error"  : "red"
+    },
+
+    "headers" : {},
+
+    "downloadDir" : "/tmp",
+
+    "editors" : {
+      "default"    : "xterm vim",
+      "image/jpeg" : "gimp",
+      "image/png"  : "gimp",
+      "text/html"  : "xterm vim"
+    },
+
+    "viewers" : {
+      "default"    : "xdg-open",
+      "image/gif"  : "google-chrome",
+      "image/jpeg" : "google-chrome",
+      "image/png"  : "google-chrome"
+    }
+  },
+
+  "targets": {
+
+    "example.com" : {
+
+      "uri"      : "http://www.example.com/path/to/trojan.php",
+      "password" : "the-password",
+
+      "mysql" : {
+        "username": "root",
+        "password": "root",
+        "database": "example"
+      },
+
+      "psql" : {
+        "username" : "somebody",
+        "database" : "the-database"
+      },
+      
+      "sqlite3" : {
+        "file": "/tmp/sqlite3-file.db"
+      }
+    }
+
+  }
+}
