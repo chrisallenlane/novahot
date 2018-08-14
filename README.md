@@ -114,6 +114,63 @@ Afterward, if changes to the file are saved locally, the file will be
 re-uploaded to the server automatically.
 
 
+Provisioning a Test Environment
+-------------------------------
+This repository contains a laboratory environment built on [Vagrant][],
+[Docker][], and the [Damn Vulnerable Web Application][dvwa] ("DVWA").  Steps
+for provisioning the environment vary depending on the capabilities of your
+physical host.
+
+### Using docker-compose ###
+If you have `docker` and `docker-compose` installed on your physical host, you
+may simply do the following:
+
+1. Clone and `cd` to this repository
+2. Run: `docker-compose up`
+
+After the docker container starts, the DVWA will be accessible at
+http://localhost:8000.
+
+### Using vagrant ###
+If `docker` is not installed on your physical host, you may use
+Vagrant/Virtualbox to access a docker-capable virtual-machine:
+
+1. Clone and `cd` to this repository
+2. Provision a virtual machine: `vagrant up`
+3. SSH into the virtual machine: `vagrant ssh`
+4. Start the docker container: `sudo su; cd /vagrant; docker-compose up`
+
+The DVWA will likewise be accessible at http://localhost:8000.
+
+### Configuring novahot against the laboratory environment ###
+Specify the following connection strings in your `~/.novahotrc` file to connect
+the `novahot` client to the PHP trojan embedded in the DVWA container:
+
+```javascript
+{
+
+  "targets": {
+    "dvwa" : {
+      "uri"      : "http://localhost:8000/novahot.php",
+      "password" : "the-password",
+
+      "mysql" : {
+        "username": "root",
+        "password": "vulnerables",
+        "database": "dvwa"
+      }
+    }
+  }
+
+}
+```
+
+You may then establish a webshell via:
+
+```sh
+novahot shell dvwa
+```
+
 Additional Information
 ----------------------
 Additional information can be found in the [wiki][]:
@@ -122,8 +179,11 @@ Additional information can be found in the [wiki][]:
 - [The Client/Trojan API][api]
 - [sqlite3 "dot command" conflicts][sqlite-dotcommands]
 
-[api]: https://github.com/chrisallenlane/novahot/wiki/The-Client-Trojan-API
-[configuration]: https://github.com/chrisallenlane/novahot/wiki/Configuring
-[payload-mode]: https://github.com/chrisallenlane/novahot/wiki/The-Client-Trojan-API#payload-mode 
+[Docker]:             https://www.docker.com/
+[Vagrant]:            https://www.vagrantup.com/
+[api]:                https://github.com/chrisallenlane/novahot/wiki/The-Client-Trojan-API
+[configuration]:      https://github.com/chrisallenlane/novahot/wiki/Configuring
+[dvwa]:               http://www.dvwa.co.uk/
+[payload-mode]:       https://github.com/chrisallenlane/novahot/wiki/The-Client-Trojan-API#payload-mode
 [sqlite-dotcommands]: https://github.com/chrisallenlane/novahot/wiki/SQLite3-Mode-%22dot-command%22-Conflicts
-[wiki]: https://github.com/chrisallenlane/novahot/wiki
+[wiki]:               https://github.com/chrisallenlane/novahot/wiki
