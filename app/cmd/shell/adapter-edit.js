@@ -11,7 +11,7 @@ module.exports = function(config, req, cmd, callback) {
 
   // tokenize the input string
   const tokenized = shellwords.split(cmd);
-  const src       = tokenized[1];
+  const src       = tokenized[1] || '';
 
   // Generate a temporary file with an extension that mathces the source file.
   // The matching extension is important to allow editors to choose the
