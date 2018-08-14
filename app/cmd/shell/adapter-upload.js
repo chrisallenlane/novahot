@@ -23,8 +23,9 @@ module.exports = function(config, req, cmd, callback) {
   }
 
   // read the file data
+  var data;
   try {
-    const data = new Buffer(fs.readFileSync(src)).toString('base64');
+    data = new Buffer(fs.readFileSync(src)).toString('base64');
   } catch (e) {
     return callback(new Error([ 'Cannot upload file.', e ].join('\n')));
   }
