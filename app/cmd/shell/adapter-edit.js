@@ -1,5 +1,5 @@
 const errors     = require('./util-http-error');
-const execFile   = require('child_process').execFile;
+const exec       = require('child_process').exec;
 const fs         = require('fs');
 const md5        = require('md5-file');
 const mime       = require('mime-types');
@@ -63,7 +63,7 @@ module.exports = function(config, req, cmd, callback) {
       const editor   = config.global.editors[mimetype] || config.global.editors.default;
 
       // open the application
-      execFile(editor, [ dst ], function(err, stdout, stderr) {
+      exec(editor + ' ' + dst, function(err, stdout, stderr) {
 
         if (err) {
           return callback(err);
