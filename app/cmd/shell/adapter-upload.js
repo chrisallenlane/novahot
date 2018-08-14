@@ -7,11 +7,11 @@ module.exports = function(config, req, cmd, callback) {
 
   // tokenize the input string
   const tokenized = shellwords.split(cmd);
-  const src       = tokenized[1];
+  const src       = tokenized[1] || '';
   const dst       = tokenized[2] || path.basename(src);
 
   // assert that src was provided
-  if (! src) {
+  if (src === '') {
 
     // assemble an error message
     var err = [
