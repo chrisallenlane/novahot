@@ -1,6 +1,6 @@
-const path   = require('path');
-const pkg    = require('../package.json');
-const rc     = require('rc');
+const path = require('path');
+const pkg  = require('../package.json');
+const rc   = require('rc');
 
 module.exports = function(options, params) {
 
