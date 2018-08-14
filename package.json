@@ -9,7 +9,6 @@
   },
   "scripts": {
     "lint": "jshint app test",
-    "snyk": "snyk test",
     "test": "tape 'test/*.js' | faucet"
   },
   "jshintConfig": {
@@ -33,7 +32,6 @@
   "devDependencies": {
     "faucet": "0.0.1",
     "jshint": "2.9.6",
-    "snyk": "^1.90.2",
     "tape": "^4.9.1"
   },
   "keywords": [

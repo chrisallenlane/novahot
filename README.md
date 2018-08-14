@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/chrisallenlane/novahot.svg)](https://travis-ci.org/chrisallenlane/novahot)
 [![npm](https://img.shields.io/npm/v/novahot.svg)]()
 [![npm](https://img.shields.io/npm/dt/novahot.svg)]()
-[![Known Vulnerabilities](https://snyk.io/test/npm/novahot/badge.svg)](https://snyk.io/test/npm/novahot)
 
 
 novahot
