@@ -75,6 +75,7 @@ module.exports = function(config, req, cmd, callback) {
         // If the "before" and "after" hashes match, the file wasn't changed.
         // Thus, we won't bother to upload it to the remote server.
         if (hashBefore === hashAfter) {
+          response.stdout = [ 'File unchanged. Edit cancelled.' ];
           return callback(null, response);
         }
 
