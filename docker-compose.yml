@@ -1,0 +1,7 @@
+version: "3"
+services:
+  dvwa:
+    build:
+      context: .
+    ports:
+      - "80:80"
