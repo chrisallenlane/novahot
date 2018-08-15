@@ -128,7 +128,7 @@ may simply do the following:
 2. Run: `docker-compose up`
 
 After the docker container starts, the DVWA will be accessible at
-http://localhost:8000.
+http://localhost:80.
 
 ### Using vagrant ###
 If `docker` is not installed on your physical host, you may use
@@ -139,7 +139,7 @@ Vagrant/Virtualbox to access a docker-capable virtual-machine:
 3. SSH into the virtual machine: `vagrant ssh`
 4. Start the docker container: `sudo su; cd /vagrant; docker-compose up`
 
-The DVWA will likewise be accessible at http://localhost:8000.
+The DVWA will be accessible at http://localhost:8000.
 
 ### Configuring novahot against the laboratory environment ###
 Specify the following connection strings in your `~/.novahotrc` file to connect
