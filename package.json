@@ -19,7 +19,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "docopt": "^0.6.2",
-    "lodash": "4.17.10",
+    "lodash": "4.17.15",
     "md5-file": "^4.0.0",
     "mime-types": "^2.1.19",
     "mkdirp": "^0.5.1",
