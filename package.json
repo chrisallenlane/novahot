@@ -9,7 +9,9 @@
   },
   "scripts": {
     "lint": "jshint app test",
-    "test": "tape 'test/*.js' | faucet"
+    "test": "tape 'test/*.js' | faucet",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jshintConfig": {
     "esnext": true,
@@ -27,7 +29,8 @@
     "request": "^2.88.0",
     "shellwords": "^0.1.1",
     "shelly": "0.0.3",
-    "tmp": "0.0.33"
+    "tmp": "0.0.33",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "faucet": "0.0.1",
@@ -49,5 +52,6 @@
   "bin": {
     "novahot": "./app/index.js"
   },
-  "main": "./app/index.js"
+  "main": "./app/index.js",
+  "snyk": true
 }
