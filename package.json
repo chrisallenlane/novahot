@@ -27,7 +27,7 @@
     "request": "^2.88.0",
     "shellwords": "^0.1.1",
     "shelly": "0.0.3",
-    "tmp": "0.0.33"
+    "tmp": "0.2.4"
   },
   "devDependencies": {
     "faucet": "0.0.1",
